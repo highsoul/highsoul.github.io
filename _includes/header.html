@@ -1,0 +1,24 @@
+<header id="hs21-nav" class="navbar">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="icon-reorder"></i>
+      </button>
+      <a class="navbar-brand" href="{{ site.url }}">{{site.title}}</a>
+    </div>
+
+    <nav class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a title="档案文件" href="#"><i class="icon-list"></i></a></li>
+        <li><a title="标签" href="#"><i class="icon-tags"></i></a></li>
+        <li><a title="转摘" href="#"><i class="icon-share"></i></a></li>
+        <li><a title="闪记" href="#"><i class="icon-lightbulb"></i></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a title="关于我" href="#"><i class="icon-user"></i></a></li>
+        <li><a title="别的链接" href="#"><i class="icon-link"></i></a></li>
+        <li><a title="rss" href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="icon-rss"></i></a></li>
+      </ul>
+    </nav>
+</header>

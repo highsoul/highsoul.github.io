@@ -1,0 +1,12 @@
+# Site settings
+title: 极上灵魂
+author: shawn.fung
+email: highsoul3301@gmail.com
+description: "we just two lost soul swimming in the fish bowl, year after year..."
+baseurl: ""
+url: "http://highsoul21.me"
+
+# Build settings
+markdown: redcarpet
+permalink: /:title
+excerpt_separator: "\n\n\n"

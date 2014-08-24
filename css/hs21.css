@@ -1,0 +1,73 @@
+body {
+  font-size: 14px;
+  font-family: "telexregular", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: #555;
+  background-color: #f9f9f9; }
+
+#hs21-nav a{
+  color: #888;
+}
+#hs21-nav a:hover{
+  color: #cc0000;
+  text-decoration: none;
+}
+
+.site-footer{
+  padding: 30px 5px;
+  margin: 30px 0;
+  border-top: 1px dashed #ddd;
+}
+
+.navbar-brand{
+  font-size: 25px;
+}
+
+
+.navbar-collapse a{
+  color: #aaaaaa;
+}
+
+/* Post  */
+
+.post-header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; 
+}
+.post-header .post-title {
+  padding: 20px 0 10px 0;
+  font-size: 23px;
+  color: #666;
+}
+.post-header .post-meta{
+  color: #888;
+}
+.post-header .post-meta .tags{
+  display: inline-block;
+  float: right;
+  color: #aaa;
+}
+.post .post-content{
+  margin-top: 10px;
+  padding: 10px;
+  color: #666
+}
+
+
+/* index */
+.post-wrapper .page-header{
+  margin-top: 0;
+}
+
+.post-wrapper .page-header .post-date{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.post-wrapper .page-header a{
+  color: #888;
+  font-weight: bold;
+}
+.post-wrapper .page-header a:hover{
+  color: #cc0000;
+  text-decoration: none;
+}
