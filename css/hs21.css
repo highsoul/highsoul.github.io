@@ -11,6 +11,9 @@ body {
   color: #cc0000;
   text-decoration: none;
 }
+#hs21-nav a i{
+  width: 20px;
+}
 
 .site-footer{
   padding: 30px 5px;
@@ -70,4 +73,21 @@ body {
 .post-wrapper .page-header a:hover{
   color: #cc0000;
   text-decoration: none;
+}
+
+/* about */
+.about-item{
+  margin:10px 18px;
+  padding: 5px;
+  border-bottom: 1px dashed #ddd;
+}
+.about-item .about-icon{
+  display: inline-block;
+  width: 20px;
+  font-size: 20px;
+}
+.about-item .about-span{
+  padding-left: 10px;
+  display: inline-block;
+  font-size: 14px;
 }
