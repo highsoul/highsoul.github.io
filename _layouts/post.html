@@ -8,7 +8,7 @@ layout: default
     	{{}}{{ page.date | date: "%Y年%m月%d日" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} 
     	<span class="tags">
     		{% for tag in page.tags %}
-    			<a href="#"> <small> #{{ tag }} </small> </a>
+    			<a class="post-tag" href="#"> <small> <i class="fa fa-tag"></i>{{ tag }} </small> </a>
     		{% endfor %}
     	</span>
     	</p>

@@ -1,9 +1,27 @@
+/* OVERRIDE BOOTSTRAP */
+.page-header{
+  margin-top: 0;
+}
+
+/* site */
 body {
   font-size: 14px;
   font-family: "telexregular", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   color: #555;
   background-color: #f9f9f9; }
 
+.span10{
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.page-header h3{
+  font-size: 19px;
+  color: #888;
+}
+
+
+/* header */
 #hs21-nav a{
   color: #888;
 }
@@ -12,7 +30,7 @@ body {
   text-decoration: none;
 }
 #hs21-nav a i{
-  width: 20px;
+  width: 15px;
 }
 
 .site-footer{
@@ -54,6 +72,13 @@ body {
   padding: 10px;
   color: #666
 }
+.post-tag{
+  color: #bbb;
+}
+.post-tag:hover{
+  color: #dd0000;
+  text-decoration: none;
+}
 
 
 /* index */
@@ -90,4 +115,36 @@ body {
   padding-left: 10px;
   display: inline-block;
   font-size: 14px;
+}
+
+/* archive */
+.arch-seg{
+  margin-bottom: 20px;
+}
+.arch-seg h4{
+  font-size: 17px;
+  color: #999;
+
+}
+
+.arch-seg ul li{
+  list-style: none;
+  padding: 3px;
+  font-size: 15px;
+  color: #777;
+}
+.arch-post-title{
+  color: #aa0000;
+  font-size: 14px;
+  
+}
+.arch-post-title:hover{
+  text-decoration: none;
+  color: #dd0000;
+  font-size: 14px;
+}
+.arch-post-author{
+  font-size: 12px;
+  color: #aaa;
+  
 }

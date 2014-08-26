@@ -3,7 +3,7 @@ layout: post
 title: highsoul21启动
 date: 2014-08-24 14:22:22
 tags: github jekyll
-categories: 技男
+categories: 学习笔记
 author: shawn
 meta: 一个阴雨绵绵的午后
 ---

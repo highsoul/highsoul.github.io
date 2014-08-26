@@ -1,0 +1,50 @@
+---
+layout: default
+title: archive
+---
+
+<div class="well">
+	<div class="page-header">
+		<h3>档案文件</h3>
+	</div>
+	<div class="row">
+		<div class="arch-seg col-md-8">
+			<div class="page-header">
+				<h4> 最近</h4>
+			</div>
+			<div class="">
+				<ul>
+				{% for post in site.posts %}
+					<li>
+						<span>{{post.date | date: "%Y-%m-%d"}}</span>
+						<div class="clearfix hidden-md hidden-lg"></div>
+						<span class="span10 hidden-xs"></span>
+						<a class="arch-post-title" href="{{ post.url }}"> {{ post.title }} </a>
+						<span class="arch-post-author pull-right">by.{{ post.author }}</span>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% for cate in site.categories %}
+		<div class="arch-seg col-md-8">
+			<div class="page-header">
+				<h4> {{ cate[0] }}</h4>
+			</div>
+			<div>
+				<ul>
+				{% for post in cate[1] %}
+					<li>
+						<span>{{post.date | date: "%Y-%m-%d"}}</span>
+						<div class="clearfix hidden-md hidden-lg"></div>
+						<span class="span10 hidden-xs"></span>
+						<a class="arch-post-title" href="{{ post.url }}"> {{ post.title }} </a>
+						<span class="arch-post-author pull-right">by.{{ post.author }}</span>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
