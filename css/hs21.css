@@ -126,7 +126,6 @@ body {
   color: #999;
 
 }
-
 .arch-seg ul li{
   list-style: none;
   padding: 3px;
@@ -146,5 +145,46 @@ body {
 .arch-post-author{
   font-size: 12px;
   color: #aaa;
-  
+}
+
+/* tags */
+.tags-tag-link{
+  display: inline-block;
+  padding: 3px;
+  color: #cc0000;
+  font-size: 14px;
+}
+.tags-tag-link:hover{
+  text-decoration: none;
+  color: #ee0000;
+}
+#tags-ul{
+  padding: 3px;
+}
+#tags-ul li{
+  list-style-type: none;
+}
+.tags-tag-head{
+  margin-top: 10px;
+  padding: 3px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+.tags-tag-head small{
+  font-weight: 200;
+}
+.tags-tag-item{
+  font-size: 14px;
+  font-weight: normal;
+  color: #777;
+}
+.tags-tag-item a{
+  padding: 0 8px;
+  font-weight: normal;
+  color: #cc0000;
+}
+.tags-tag-item a:hover{
+  text-decoration: none;
+  color: #ee0000;
 }
