@@ -15,6 +15,7 @@ title: archive
 			<div>
 				<ul>
 				{% for post in site.posts %}
+					{% if post.categories.first != "gallery" %}
 					<li>
 						<span>{{post.date | date: "%Y-%m-%d"}}</span>
 						<div class="clearfix hidden-md hidden-lg"></div>
@@ -22,11 +23,13 @@ title: archive
 						<a class="arch-post-title" href="{{ post.url }}"> {{ post.title }} </a>
 						<span class="arch-post-author pull-right">by.{{ post.author }}</span>
 					</li>
+					{% endif %}
 				{% endfor %}
 				</ul>
 			</div>
 		</div>
 	{% for cate in site.categories %}
+		{% if cate[0] != "gallery" %}
 		<div class="arch-seg col-md-8">
 			<div class="page-header">
 				<h4> {{ cate[0] }}</h4>
@@ -45,6 +48,7 @@ title: archive
 				</ul>
 			</div>
 		</div>
+		{% endif %}
 	{% endfor %}
 	</div>
 </div>

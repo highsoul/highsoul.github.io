@@ -2,6 +2,12 @@
 .page-header{
   margin-top: 0;
 }
+.navbar-right{
+  padding-right: 20px;
+}
+.thumbnail{
+  margin-bottom: 0px;
+}
 
 /* site */
 body {
@@ -12,6 +18,11 @@ body {
 
 .span10{
   padding: 0 10px;
+  display: inline-block;
+}
+
+.span20{
+  padding: 0 20px;
   display: inline-block;
 }
 
@@ -187,4 +198,18 @@ body {
 .tags-tag-item a:hover{
   text-decoration: none;
   color: #ee0000;
+}
+
+/* gallery */
+.x1{
+  width: 220px;
+}
+.x2{
+  width: 440px;
+}
+#gallery .gallery-item{
+  margin-bottom: 3px;
+}
+.gallery-item .caption{
+  font-size: 13px;
 }

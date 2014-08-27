@@ -1,0 +1,89 @@
+---
+layout: gallery
+title: gallery
+--- 
+<!-- PC -->
+<div id="gallery" class="col-md-12 hidden-xs">
+	{% for media in site.categories.gallery %}
+   
+    {% if media.type == "image" %}
+      {% assign image = media %}
+      {% assign links = image.links | split: "=*=" %}
+      {% for link in links %}
+      {% assign desc = "description" | append: forloop.index %}
+      <div class="gallery-item x1">
+        <div class="thumbnail">
+          <img class="img-responsive" src="{{ link }}">
+          <div class="caption">
+              <p>{{ image[desc] }} </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="gallery-item x2">
+      <div class="thumbnail"> 
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" src="{{ media.link }} " allowfullscreen></iframe>
+        </div>
+        <div class="caption">
+          <p>{{ media.description }}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+	{% endfor %}
+</div>
+
+<!-- Mobile -->
+
+<div class="col-md-12 hidden-md">
+{% for media in site.categories.gallery %}
+   
+    {% if media.type == "image" %}
+      {% assign image = media %}
+      {% assign links = image.links | split: "=*=" %}
+      {% for link in links %}
+      {% assign desc = "description" | append: forloop.index %}
+        <div class="thumbnail">
+          <img class="img-responsive" src="{{ link }}">
+          <div class="caption">
+              <p>{{ image[desc] }} </p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="thumbnail"> 
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" src="{{ media.link }} " allowfullscreen></iframe>
+        </div>
+        <div class="caption">
+          <p>{{ media.description }}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="{{ '/js/imagesloaded.pkgd.min.js' | site.baseurl }}"></script>
+  <script src="{{ '/js/masonry.pkgd.min.js' | site.baseurl }}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var option = {
+                columnWidth: '.x1',
+                itemSelector: '.gallery-item',
+                gutter: 3,
+                isFitWidth: true,
+                isOriginLeft: false
+        }
+        
+        var $gallery = $('#gallery').masonry(option);
+        
+        $gallery.imagesLoaded(function(){
+            $gallery.masonry();
+        })
+    });
+</script>
