@@ -4,16 +4,16 @@ title: gallery
 --- 
 <!-- PC -->
 <div id="gallery" class="col-md-12 hidden-xs">
-	{% for media in site.categories.gallery %}
-   
+	{% for media in site.categories.gallery limit:4%}
     {% if media.type == "image" %}
       {% assign image = media %}
-      {% assign links = image.links | split: "=*=" %}
+      {% assign links = image.links | split: "+++" %}
       {% for link in links %}
       {% assign desc = "description" | append: forloop.index %}
+      {% assign qn_style = "?imageView/2/w/226/q/85" %}
       <div class="gallery-item x1">
         <div class="thumbnail">
-          <img class="img-responsive" src="{{ link }}">
+          <img class="img-responsive" src="{{ link }}{{qn_style}}">
           <div class="caption">
               <p>{{ image[desc] }} </p>
           </div>
@@ -33,6 +33,9 @@ title: gallery
     </div>
     {% endif %}
 	{% endfor %}
+  <div class="navigation">
+    <a href="{{ '/gallery/page2' | prepend: site.baseurl }}"> next page? </a>
+  </div>
 </div>
 
 <!-- Mobile -->
@@ -42,11 +45,12 @@ title: gallery
    
     {% if media.type == "image" %}
       {% assign image = media %}
-      {% assign links = image.links | split: "=*=" %}
+      {% assign links = image.links | split: "+++" %}
       {% for link in links %}
       {% assign desc = "description" | append: forloop.index %}
+      {% assign qn_style = "" %}
         <div class="thumbnail">
-          <img class="img-responsive" src="{{ link }}">
+          <img class="img-responsive" src="{{ link }}{{ qn_style }}">
           <div class="caption">
               <p>{{ image[desc] }} </p>
           </div>
@@ -66,24 +70,52 @@ title: gallery
 
 </div>
 
+
+
+
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="{{ '/js/imagesloaded.pkgd.min.js' | site.baseurl }}"></script>
-  <script src="{{ '/js/masonry.pkgd.min.js' | site.baseurl }}"></script>
+  <script src="{{ '/js/imagesloaded.pkgd.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/masonry.pkgd.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/jquery.infinitescroll.min.js' | prepend: site.baseurl }}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         var option = {
                 columnWidth: '.x1',
                 itemSelector: '.gallery-item',
-                gutter: 3,
+                gutter: 4,
                 isFitWidth: true,
                 isOriginLeft: false
         }
         
         var $gallery = $('#gallery').masonry(option);
+
         
         $gallery.imagesLoaded(function(){
             $gallery.masonry();
-        })
+        });
+
+        $gallery.infinitescroll({
+          itemSelector : '.gallery-item',
+          debug : true,
+          dataType : 'html',
+          animate : true,
+          errorCallback: function(){
+            console.log("----404----- ")
+            $gallery.infinitescroll('destroy');
+          },
+
+        }, function(newElements, data, url){
+            
+            console.log(newElements);
+            $("#gallery-loading").removeClass("hidden");
+            $newElements = $(newElements).addClass("hidden");
+            $newElements.imagesLoaded(function(){
+              $("#gallery-loading").addClass("hidden");
+              $newElements.removeClass("hidden");
+              $gallery.masonry( 'appended', $newElements, true );
+
+          });
+        });
     });
 </script>

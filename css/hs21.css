@@ -202,14 +202,17 @@ body {
 
 /* gallery */
 .x1{
-  width: 220px;
+  width: 226px;
 }
 .x2{
-  width: 440px;
+  width: 452px;
 }
 #gallery .gallery-item{
   margin-bottom: 3px;
 }
 .gallery-item .caption{
   font-size: 13px;
+}
+#gallery-loading{
+  margin-top: 20px;
 }
