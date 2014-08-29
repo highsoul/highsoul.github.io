@@ -207,6 +207,9 @@ body {
 .x2{
   width: 452px;
 }
+#gallery{
+  opacity: 0;
+}
 #gallery .gallery-item{
   margin-bottom: 3px;
 }

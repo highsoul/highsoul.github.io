@@ -40,7 +40,7 @@ title: gallery
 
 <!-- Mobile -->
 
-<div class="col-md-12 visible-xs">
+<div class="gallery-mobile col-md-12 visible-xs">
 {% for media in site.categories.gallery %}
    
     {% if media.type == "image" %}
@@ -88,11 +88,13 @@ title: gallery
                 isOriginLeft: false
         }
         
-        var $gallery = $('#gallery').masonry(option);
+        var $gallery = $('#gallery');
 
         
         $gallery.imagesLoaded(function(){
-            $gallery.masonry();
+            $('#gallery-loading').addClass("hidden");
+            $gallery.animate({ opacity : 1 });
+            $gallery.masonry(option);
         });
 
         $gallery.infinitescroll({
