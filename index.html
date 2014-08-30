@@ -4,7 +4,7 @@ layout: default
 
 
     {% for post in site.posts %}
-      {% unless post.type %}
+      {% if post.categories.first != "gallery" and post.categories.first != "fm" %}
       <div class="well post-wrapper">
         <div class="page-header">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
@@ -24,7 +24,7 @@ layout: default
           {{ post.excerpt }}
         </div>
       </div>
-      {% endunless %}
+      {% endif %}
     {% endfor %}
 
  

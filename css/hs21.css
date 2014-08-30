@@ -219,3 +219,8 @@ body {
 #gallery-loading{
   margin-top: 20px;
 }
+
+/* fm */
+.fm-song-cover{
+  width: 100px;
+}

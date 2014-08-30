@@ -15,7 +15,7 @@ title: archive
 			<div>
 				<ul>
 				{% for post in site.posts %}
-					{% if post.categories.first != "gallery" %}
+					{% if post.categories.first != "gallery" and post.categories.first != "fm" %}
 					<li>
 						<span>{{post.date | date: "%Y-%m-%d"}}</span>
 						<div class="clearfix hidden-md hidden-lg"></div>

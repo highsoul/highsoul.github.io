@@ -1,0 +1,61 @@
+---
+title: highsoul.fm
+layout: default
+---
+<div id="fm-page-header" class="page-header">
+  <h3><i class="fa fa-wifi"></i> highsoul.FM <small>点一下就行了，再点下就关了</small></h1>
+</div>
+  <ul class="list-group">
+  	{% for song in site.categories.fm %}
+  		<li class="list-group-item" data-playing="no">
+  			<div class="media">
+  				<a class="pull-left" href="#">
+    			<img class="media-object fm-song-cover" src="{{ song.cover }}" alt="{{ song.title }}">
+  				</a>
+  				<div class="media-body">
+    				<h4 class="media-heading">{{ song.title }}</h4>
+    				<button class="btn btn-primary fm-start-btn hidden-xs">
+  						<i class="fa fa-play-circle"></i>
+  					</button>
+  					<button class="btn btn-primary fm-stop-btn hidden hidden-xs">
+  						<i class="fa fa-square"></i>
+  					</button>
+    				<small>by : {{ song.singer }}</small>
+    				<p> 
+
+    					{{ song.description }} 
+    					
+    				</p>
+  				</div>
+			</div>
+  		<audio src="{{ song.link }}">哎，你的浏览器不支持html5 audio!</audio>
+		
+  	</li>
+  	{% endfor %}
+  </ul>
+
+<script type="text/javascript">
+
+	$(".fm-start-btn").click(function(){
+		$(this).parent(".list-group-item").trigger("click");
+		$(this).addClass("hidden");
+		$(this).next().removeClass("hidden");
+	});
+	$(".fm-stop-btn").click(function(){
+		$(this).parent(".list-group-item").trigger("click");
+		$(this).addClass("hidden");
+		$(this).prev().removeClass("hidden");
+	});
+	$(".list-group-item").click(function(){
+		if( $(this).data("playing") == "no" ){
+			$(this).children("audio").trigger("play");
+			$(this).data("playing","yes");
+			$(this).addClass("list-group-item-info");
+		}else{
+			$(this).children("audio").trigger("pause").prop("currentTime", 0);
+			$(this).data("playing","no");
+			$(this).removeClass("list-group-item-info");
+		}
+	})
+
+</script>
