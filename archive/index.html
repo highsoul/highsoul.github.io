@@ -29,7 +29,7 @@ title: archive
 			</div>
 		</div>
 	{% for cate in site.categories %}
-		{% if cate[0] != "gallery" %}
+		{% if cate[0] != "gallery" and cate[0] != "fm" %}
 		<div class="arch-seg col-md-8">
 			<div class="page-header">
 				<h4> {{ cate[0] }}</h4>
